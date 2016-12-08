@@ -1,0 +1,33 @@
+{
+  "name": "jellybeans",
+  "version": "1.0.0",
+  "description": "Streamable log",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/velocityzen/jellybeans.git"
+  },
+  "keywords": [
+    "log",
+    "stream",
+    "rethinkdb",
+    "realtime",
+    "message"
+  ],
+  "author": "Alexey Novikov <v@2dubs.com> (http://2dubs.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/velocityzen/jellybeans/issues"
+  },
+  "homepage": "https://github.com/velocityzen/jellybeans#readme",
+  "devDependencies": {
+    "jasmine": "^2.5.2",
+    "rethinkdbdash": "^2.3.23"
+  },
+  "dependencies": {
+    "monotonic-timestamp": "0.0.9"
+  }
+}
