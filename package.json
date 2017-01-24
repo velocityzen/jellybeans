@@ -1,6 +1,6 @@
 {
   "name": "jellybeans",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Streamable log",
   "main": "lib/index.js",
   "scripts": {
