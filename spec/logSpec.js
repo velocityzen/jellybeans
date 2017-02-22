@@ -60,6 +60,38 @@ describe('Jellybeans >', () => {
       });
   });
 
+  it('checks is event exist', done => {
+    log.has(eid1)
+      .then(res => {
+        expect(res).toBe(true);
+        done();
+      })
+  });
+
+  it('checks is event doesn\'t exist', done => {
+    log.has('does not exist')
+      .then(res => {
+        expect(res).toBe(false);
+        done();
+      })
+  });
+
+  it('checks is event exist in the log', done => {
+    log.has(eid1, { log: 'user1' })
+      .then(res => {
+        expect(res).toBe(true);
+        done();
+      })
+  });
+
+  it('checks is event doesn\'t exist in another log', done => {
+    log.has(eid1, { log: 'user2' })
+      .then(res => {
+        expect(res).toBe(false);
+        done();
+      })
+  });
+
   let eid2;
   it('adds event with linked content', done => {
     log
