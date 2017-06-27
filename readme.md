@@ -87,13 +87,18 @@ Fetch messages ordered by their `received` timestamps.
 
 `opts` are the same for both `getFeed` and `getLog` methods
 
-* __live__ — boolean, default: false. If true returns rethinkdb changes stream
+* __live__ — boolean, default `false`. If true returns rethinkdb changes stream
 * __logs__ — array. Array of logs ids you want to get
-* __types__ — array, default '*'. Array of event types you want to get.
-* __gt__, __ge__ — timestamp. Greater than and greater than or equal define the lower bound of the range to be streamed. Only records where the key is greater than (or equal to) this option will be included in the range.
-* __lt__, __le__ — timestamp. Less than and less than or equal define the higher bound of the range to be streamed. Only key/value pairs where the key is less than (or equal to) this option will be included in the range.
-* __status__ — integer, optional. Return event with `status` only
+* __types__ — array, default `*`. Array of event types you want to get.
+* __status__ — integer, optional. Returns events with `status` only
+* __count__ — boolean, default `false`. Returns a number of events for every type
+* __gt__, __ge__ — timestamp, optional. Greater than and greater than or equal define the lower bound of the range to be streamed. Only records where the key is greater than (or equal to) this option will be included in the range.
+* __lt__, __le__ — timestamp, optional. Less than and less than or equal define the higher bound of the range to be streamed. Only key/value pairs where the key is less than (or equal to) this option will be included in the range.
+* __content__ — boolean. deafult `false`
 * __limit__ — integer, optional. Limit the number of results collected by this stream. This number represents a maximum number of results and may not be reached if you get to the end of the data first.
+
+`Live`, `limit`, `count` are mutually exclusive options
+
 
 ```js
 log.getFeed({
@@ -109,7 +114,7 @@ log.getFeed({
 
 ## Linked Content
 
-When you have several events that should have the same __consistent__ conten you should use `linkedContetn` option. Then content of event will be saved to separate table with link to it in the event.
+When you have several events that should have the same __consistent__ conten you should use `linkedContent` option. Then content of event will be saved to separate table with link to it in the event.
 
 ## Event Status
 

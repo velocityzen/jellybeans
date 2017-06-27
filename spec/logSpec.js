@@ -92,6 +92,14 @@ describe('Jellybeans >', () => {
       })
   });
 
+  it('checks events count', done => {
+    log.getLog({ count: true })
+      .then(res => {
+        expect(res).toBe(1);
+        done();
+      });
+  });
+
   let eid2;
   it('adds event with linked content', done => {
     log
